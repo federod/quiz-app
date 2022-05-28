@@ -20,6 +20,7 @@ const PageConatiner = (
       if (item.status === "pass") {
         counter++;
       }
+      return counter;
     });
     return (100 * counter) / 5;
   };

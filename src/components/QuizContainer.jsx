@@ -8,7 +8,7 @@ const QuizContainer = () => {
   const [pageNumber, setPageNumber] = useState(0);
   const [currentPageQuiz, setCurrentQuiz] = useState({});
   const [selectedAnswers, setSelectedAnswers] = useState([]);
-  const [score, setScore] = useState([]);
+  const [score] = useState([]);
 
   // for api call
 
