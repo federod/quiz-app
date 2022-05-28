@@ -4,7 +4,7 @@ export const Button = styled.section`
   pointer-event: ${(props) => (props.disabled ? "none" : "auto")};
   border-radius: 3px;
   padding: 0.5rem 0;
-  min-width: 18rem;
+  width: 18rem;
   min-height: 2rem;
   text-align: center;
   background: ${(props) => (props.disabled ? "palevioletred" : "white")};
@@ -16,6 +16,7 @@ export const Button = styled.section`
 
 export const Section = styled.section`
   display: flex;
+  flex-direction: ${(props) => (props.isMobile ? "column" : "row")};
   justify-content: space-evenly;
 `;
 
@@ -24,22 +25,19 @@ export const ButtonSection = styled.div`
   flex-direction: column;
   height: 400px;
   justify-content: space-evenly;
-  width: 40%;
-  max-width: 40%;
   align-items: center;
 `;
 
 export const H1 = styled.h1`
-  width: 90%;
+
 `;
 
 export const QuestionConatiner = styled.div`
-  max-width: 40%;
+  max-width: ${(props) => (props.isMobile ? "100%" : "40%")};
 `;
 
 export const MainContainer = styled.div`
-  width: 92%;
-  margin: 3rem;
+  margin: ${(props) => (props.isMobile ? "1rem 0rem" : "3rem")};
   color: palevioletred;
 `;
 
@@ -57,6 +55,6 @@ export const NextButton = styled.button`
 
 export const Result = styled.h1`
   height: 200px;
-  font-size: 10rem;
+  font-size: ${(props) => (props.isMobile ? "5rem" : "10rem")};
   margin-top: -15rem;
 `;
