@@ -12,11 +12,18 @@ export const Button = styled.section`
   border: 2px solid palevioletred;
   font-size: 1em;
   margin: 1em;
+
+  @media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+  }
 `;
 
 export const Section = styled.section`
   display: flex;
-  flex-direction: ${(props) => (props.isMobile ? "column" : "row")};
+  flex-direction: column;
+  align-items: center;
   justify-content: space-evenly;
 `;
 
@@ -26,17 +33,18 @@ export const ButtonSection = styled.div`
   height: 400px;
   justify-content: space-evenly;
   align-items: center;
+  font-weight: bold;
 `;
 
-export const H1 = styled.h1`
-
-`;
+export const H1 = styled.h1``;
 
 export const QuestionConatiner = styled.div`
   max-width: ${(props) => (props.isMobile ? "100%" : "40%")};
+  font-weight: bold;
 `;
 
 export const MainContainer = styled.div`
+  // width: 92%;
   margin: ${(props) => (props.isMobile ? "1rem 0rem" : "3rem")};
   color: palevioletred;
 `;
@@ -50,6 +58,7 @@ export const NextButton = styled.button`
   width: 7rem;
   height: 2rem;
   margin-top: 5rem;
+  font-weight: bold;
 }
 `;
 
