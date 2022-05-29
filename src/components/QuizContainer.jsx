@@ -9,6 +9,7 @@ const QuizContainer = () => {
   const [currentPageQuiz, setCurrentQuiz] = useState({});
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [score] = useState([]);
+  const [retake, setRetake] = useState(false);
 
   // for api call
 
@@ -20,7 +21,7 @@ const QuizContainer = () => {
       .then((data) =>
         getData(data, setQuestions, setCurrentQuiz, setPageNumber)
       );
-  }, []);
+  }, [retake]);
 
   // hanlder for next button ans setting page number and resturn quiz for particular page
   const handleClick = () => {
@@ -56,7 +57,9 @@ const QuizContainer = () => {
         handleClick,
         questionsQuiz,
         selectedAnswers,
-        score
+        score,
+        setRetake,
+        retake
       )}
     </>
   );

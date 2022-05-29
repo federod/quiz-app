@@ -12,14 +12,14 @@ const PageConatiner = (
   handleClick,
   questionsQuiz,
   selectedAnswers,
-  score
+  score,
+  setRetake,
+  retake
 ) => {
   const [width, setWidth] = useState(window.innerWidth);
-
-  const handleWindowSizeChange =()=> {
+  function handleWindowSizeChange() {
     setWidth(window.innerWidth);
   }
-
   useEffect(() => {
     window.addEventListener("resize", handleWindowSizeChange);
     return () => {
@@ -28,6 +28,7 @@ const PageConatiner = (
   }, []);
   const isMobile = width < 720;
   
+
   const percentage = () => {
     const result = calculateResult(selectedAnswers, score, questionsQuiz);
     let counter = 0;
@@ -46,7 +47,14 @@ const PageConatiner = (
         {QustionContainer(currentPageQuiz, pageNumber, isMobile)}
         {AnswerSection(currentPageQuiz, pageNumber, handleSelect)}
       </S.Section>
-      {NextAndResultSection(pageNumber, percentage, handleClick, isMobile)}
+      {NextAndResultSection(
+        pageNumber,
+        percentage,
+        handleClick,
+        isMobile,
+        setRetake,
+        retake
+      )}
     </S.MainContainer>
   );
 };
