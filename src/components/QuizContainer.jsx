@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import PageConatiner from "./PageConatiner";
+import PageContainer from "./PageContainer";
 import { getData } from "./utils";
 
 const QuizContainer = () => {
@@ -31,7 +31,7 @@ const QuizContainer = () => {
       setCurrentQuiz(quiz);
     }
   };
-  
+
   // handler for choosing answers
   const handleSelect = (value, pgNum, dis) => {
     const updatedAnswer = currentPageQuiz?.answers.map((item) => {
@@ -51,7 +51,7 @@ const QuizContainer = () => {
 
   return (
     <>
-      {PageConatiner(
+      {PageContainer(
         currentPageQuiz,
         pageNumber,
         handleSelect,
