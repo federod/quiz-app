@@ -23,7 +23,7 @@ const QuizContainer = () => {
       );
   }, [retake]);
 
-  // hanlder for next button ans setting page number and resturn quiz for particular page
+  // handeler for next question button
   const handleClick = () => {
     pageNumber <= 5 && setPageNumber(pageNumber + 1);
     if (pageNumber > 0 && pageNumber <= 5) {
@@ -31,6 +31,7 @@ const QuizContainer = () => {
       setCurrentQuiz(quiz);
     }
   };
+  
   // handler for choosing answers
   const handleSelect = (value, pgNum, dis) => {
     const updatedAnswer = currentPageQuiz?.answers.map((item) => {
